@@ -1,0 +1,7 @@
+<app-message
+  *ngFor="let message of data$ | async; trackBy: trackByMessages"
+  [id]="message.id"
+  [type]="message.type"
+  [message]="message.message"
+  (removed)="remove($event)"
+></app-message>

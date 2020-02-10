@@ -1,0 +1,23 @@
+/* stylelint-disable selector-max-universal */
+
+* {
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* stylelint-enable selector-max-universal */
+
+/* stylelint-disable selector-max-type */
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  height: 100%;
+}
+
+/* stylelint-enable selector-max-type */

@@ -1,31 +1,30 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { CoreModule } from '~core/core.module';
+import { SharedModule } from '~shared/shared.module';
+
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('[App] Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule,
+        SharedModule,
+        CoreModule
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it('should create', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+
+    const app = fixture.debugElement.componentInstance;
+
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'flexiby'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('flexiby');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('flexiby app is running!');
   });
 });

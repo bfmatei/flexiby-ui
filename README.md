@@ -1,27 +1,32 @@
-# Flexiby
+# Flexiby UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.12.
+## Commands
+   - `npm start` - shorthand for `npm serve:dev`.
+   - `npm install` / `npm i` - install the latest packages according to `package.json`.
+   - `npm ci` - install the latest packages according to `package-lock.json`.
 
-## Development server
+### Build
+   - `npm run build:dev` - produces a faster but highly unoptimized build. It is mainly used for development and debugging. It is not recommended for production environments as the build is not optimized.
+   - `npm run build:integration` - produces build for integration environment. It is not recommended for local development as the build takes a lot of time. 
+   - `npm run build:master` - produces build for production environments (staging, re7 and ope). It is not recommended for local development as the build takes a lot of time.
+   - `npm run build:master:stats` - produces build for production environments (staging, re7 and ope). It is not recommended for local development as the build takes a lot of time.
+   - `npm run build:ci` - produces build for ci environment. It is used for checking if the app is building. It is not recommended for production environments as the build is not optimized.
+   - `npm run build:local` - produces build for local environment. It is used for testing the app with local backend. It is not recommended for production environments as the build is not optimized.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Build Analyzer (`http://localhost:8080/`)
+   - `npm run build:analyze:stats` - analyzes the stats produced by `npm run build:production:stats`.
 
-## Code scaffolding
+### Serve (`http://localhost:4200/`)
+   - `npm run serve:dev` - start local instance connected to local environment on port 8080. It uses the same build configuration as `npm run build:dev`.
+   - `npm run serve:integration` - start local instance connected to integration environment. It uses the same build configuration as `npm run build:integration`.
+   - `npm run serve:master` - start local instance connected to staging environment. It uses the same build configuration as `npm run build:master`.
+   - `npm run serve:ci` - start local instance connected to integration environment. It uses the same build configuration as `npm run build:ci`.
+   - `npm run serve:local` - start local instance connected to local environment on port `8080`. It uses the same build configuration as `npm run build:local`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Test
+   - `npm run lint:app` - run the linting for both TypeScript and SCSS files.
+   - `npm run lint:ts` - run the linting for TypeScript files.
+   - `npm run lint:scss` - run the linting for SCSS files.
+   - `npm run test` - run the unit tests in watch mode. It uses Chrome as test browser.
+   - `npm run test:ci` - run the unit tests in ci mode. It uses headless Chrome as test browser.
+   - `npm run e2e` - run the e2e test.

@@ -1,23 +1,48 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "alwaysStrict": true,
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
+    "checkJs": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "importHelpers": true,
+    "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "~app/*": ["src/app/*"],
+      "~core/*": ["src/core/*"],
+      "~env/*": ["src/environments/*"],
+      "~helpers/*": ["src/helpers/*"],
+      "~modules/*": ["src/modules/*"],
+      "~shared/*": ["src/shared/*"]
+    },
+    "plugins": [
+      {
+        "name": "@angular/language-service"
+      },
+      {
+        "name": "typescript-tslint-plugin"
+      }
     ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

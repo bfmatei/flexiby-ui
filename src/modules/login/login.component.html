@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+  <input placeholder="Username" formControlName="username" />
+
+  <input placeholder="Password" type="password" formControlName="password" />
+
+  <button type="submit" (click)="login()" [disabled]="loggingIn$ | async">
+    Login
+  </button>
+</form>

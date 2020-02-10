@@ -1,0 +1,4 @@
+{
+  'extends': ['@bmatei/eslint-config/angular.yaml'],
+  'parserOptions': { 'project': './tsconfig.eslint.json' },
+}
